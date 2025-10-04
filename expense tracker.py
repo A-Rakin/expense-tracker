@@ -30,3 +30,16 @@ def plot_expenses_by_category(df):
 	plt.ylabel("")
 	plt.show()
 
+#plot_expenses_by_category(df)
+
+def plot_monthly_trends(df):
+	df["Date"] = pd.to_datetime(df["Date"])
+	df["Month"] = df["Date"].dt.to_period("M")
+	monthly_summary = df.groupby("Month")["Amount"].sum()
+	monthly_summary.plot(kind="bar", figsize=(10, 6), title="Monthly Expense Trends")
+	plt.xlabel("Month")
+	plt.ylabel("Total Expenses")
+	plt.xticks(rotation=45)
+	plt.show()
+
+
