@@ -15,3 +15,8 @@ def log_expense(date, category, amount, description):
 
 def load_expenses():
 	return pd.read_csv("expenses.csv", names=["Date", "Category", "Amount", "Description"])
+
+def summarize_expenses(df):
+	summary = df.groupby("Category")["Amount"].sum()
+	print("\nExpense Sumamry:")
+	print(summary)
