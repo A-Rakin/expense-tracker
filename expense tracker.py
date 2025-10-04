@@ -21,5 +21,12 @@ def summarize_expenses(df):
 	print("\nExpense Sumamry:")
 	print(summary)
 	
-df = load_expenses()
-summarize_expenses(df)    
+#df = load_expenses()
+#summarize_expenses(df)    
+
+def plot_expenses_by_category(df):
+	summary = df.groupby("Category")["Amount"].sum()
+	summary.plot(kind="pie", autopct="%1.1f%%", figsize=(8,8), title="Expenses by Category")
+	plt.ylabel("")
+	plt.show()
+
