@@ -42,4 +42,39 @@ def plot_monthly_trends(df):
 	plt.xticks(rotation=45)
 	plt.show()
 
+def main():
+    print("Welcome to the Expense Tracker!")
+    while True:
+        print("\nOptions:")
+        print("1. Log an Expense")
+        print("2. View Expense Summary")
+        print("3. Plot Expenses by Category")
+        print("4. Plot Monthly Trends")
+        print("5. Exit")
+        
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            date = input("Enter date (YYYY-MM-DD): ")
+            category = input("Enter category: ")
+            amount = float(input("Enter amount: "))
+            description = input("Enter description: ")
+            log_expense(date, category, amount, description)
+            print("Expense logged successfully!")
+        elif choice == "2":
+            df = load_expenses()
+            summarize_expenses(df)
+        elif choice == "3":
+            df = load_expenses()
+            plot_expenses_by_category(df)
+        elif choice == "4":
+            df = load_expenses()
+            plot_monthly_trends(df)
+        elif choice == "5":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
 
