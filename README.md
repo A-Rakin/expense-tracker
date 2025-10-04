@@ -1,9 +1,9 @@
-** 💰 Expense Tracker (Python CLI) **
+💰 Expense Tracker (Python CLI)
 
 A simple command-line Expense Tracker built in Python to help you record, analyze, and visualize your spending habits.
 This tool logs daily expenses, provides category-wise summaries, and generates insightful charts to track your financial trends over time.
 
-**🚀 Features **
+🚀 Features
 
 ✅ Log Expenses Easily – Add expenses with date, category, amount, and description.
 ✅ View Summaries – Get a quick breakdown of total spending by category.
