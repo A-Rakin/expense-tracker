@@ -20,3 +20,6 @@ def summarize_expenses(df):
 	summary = df.groupby("Category")["Amount"].sum()
 	print("\nExpense Sumamry:")
 	print(summary)
+	
+df = load_expenses()
+summarize_expenses(df)    
